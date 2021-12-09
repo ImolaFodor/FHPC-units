@@ -1,6 +1,6 @@
-#define NX 800
-#define NY 300
-#define NZ 100
+#define NX 80
+#define NY 30
+#define NZ 10
 
 #include <stdio.h>
 #include <mpi.h>
@@ -18,14 +18,14 @@ int main(int argc, char **argv)
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
-    int subarray_size = NX*NY*NZ)/size;
+    int subarray_size = (NX*NY*NZ)/size;
+
+    A = malloc(NX*NY*NZ * sizeof(double));
+    B = malloc(NX*NY*NZ * sizeof(double));
+    C =  malloc(NX*NY*NZ * sizeof(double));
+
 
     if (rank == 0){
-
-        A = malloc(NX*NY*NZ * sizeof(double));
-        B = malloc(NX*NY*NZ * sizeof(double));
-        C =  malloc(NX*NY*NZ * sizeof(double));
-
         for(int i = 0; i < NX*NY*NZ-1; ++i) {
                 A[i] = ((double)rand()) + 1; /* this will generate a random number between 1 and 10 */
                 B[i] = ((double)rand()) + 1; /* this will generate a random number between 1 and 10 */
@@ -60,20 +60,17 @@ int main(int argc, char **argv)
     double *Bsub_array = malloc(subarray_size * sizeof(double));
     double *Csub_array = malloc(subarray_size * sizeof(double));
 
-    if (my_rank == 0) {
-        printf("About to scatter... value A[1] is %f \n",A[1]);
-        MPI_Scatter(A, subarray_size, MPI_DOUBLE,Asub_array ,subarray_size, MPI_DOUBLE, 0,new_communicator);
-        MPI_Scatter(B, subarray_size, MPI_DOUBLE,Bsub_array , subarray_size, MPI_DOUBLE, 0,new_communicator);
-    }
-
-    printf("Rank %d, value Asub_array[1] is %f, value of Bsub_array[1] is %f, the first sum will be %f \n", my_rank,Asub_array[1] , Bsub_array[1], Asub_array[1] + Bsub_array[1]);
+    MPI_Scatter(A, subarray_size, MPI_DOUBLE,Asub_array ,subarray_size, MPI_DOUBLE, 0,new_communicator);
+    MPI_Scatter(B, subarray_size, MPI_DOUBLE,Bsub_array , subarray_size, MPI_DOUBLE, 0,new_communicator);
+    
+//    printf("Rank %d, value Asub_array[1] is %f, value of Bsub_array[1] is %f, the first sum will be %f \n", my_rank,Asub_array[1] , Bsub_array[1], Asub_array[1] + Bsub_array[1]);
 
     for (int i = 0; i< subarray_size; i++){
       Csub_array[i] = Asub_array[i] + Bsub_array[i];
-//	printf("Local sum running... Rank %d, value Asub_array[i] is %.6f, value of Bsub_array[i] is %.6f, the sum is %.6f \n", my_rank,Asub_array[i] , Bsub_array[i], Csub_array[i]);
+	printf("Local sum running... Rank %d, value Asub_array[i] is %.6f, value of Bsub_array[i] is %.6f, the sum is %.6f \n", my_rank,Asub_array[i] , Bsub_array[i], Csub_array[i]);
 }
 
-    MPI_Gather(&Csub_array, subarray_size, MPI_FLOAT, C, subarray_size, MPI_FLOAT, 0, new_communicator);
+    MPI_Gather(&Csub_array, subarray_size, MPI_FLOAT, &C[my_rank*subarray_size], subarray_size, MPI_FLOAT, 0, new_communicator);
     
     if (my_rank == 0){
       printf("Values collected on process %d: %f, %f, %f, %f.\n", my_rank, C[0], C[1], C[2],C[3]);
@@ -84,7 +81,7 @@ MPI_Finalize();
     // if it's on the master node
     //if (rank == 0)
     //    printResults(matrixA, matrixB, matrixC, calcTime);
-        printf("First 4  values collected in C: %f, %f, %f, %f.\n", C[0], C[1], C[2], C[3]);
+  //      printf("First 4  values collected in C: %f, %f, %f, %f.\n", C[0], C[1], C[2], C[3]);
     //    return 0;
 }
 

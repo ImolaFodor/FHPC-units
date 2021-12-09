@@ -29,7 +29,7 @@ int main(int argc, char **argv)
                 A[i] = ((double)rand()) + 1; /* this will generate a random number between 1 and 10 */
                 B[i] = ((double)rand()) + 1; /* this will generate a random number between 1 and 10 */
         }
-	printf("Initialized arrays... value A[2] is %f, value of B[2] is %f \n",A[2] , B[2]);
+//	printf("Initialized arrays... value A[2] is %f, value of B[2] is %f \n",A[2] , B[2]);
     }
 
     double *Asub_array = malloc((NX*NY*NZ)/size * sizeof(double));
@@ -40,13 +40,13 @@ int main(int argc, char **argv)
         MPI_Scatter(A, (NX*NY*NZ)/size, MPI_DOUBLE,Asub_array ,(NX*NY*NZ)/size, MPI_DOUBLE, 0,MPI_COMM_WORLD);
         MPI_Scatter(B, (NX*NY*NZ)/size, MPI_DOUBLE,Bsub_array , (NX*NY*NZ)/size, MPI_DOUBLE, 0,MPI_COMM_WORLD);
     
-    printf("Rank %d, value Asub_array[1] is %f, value of Bsub_array[1] is %f, the first sum will be %f \n", my_rank,Asub_array[1] , Bsub_array[1], Asub_array[1] + Bsub_array[1]);
+//    printf("Rank %d, value Asub_array[1] is %f, value of Bsub_array[1] is %f, the first sum will be %f \n", my_rank,Asub_array[1] , Bsub_array[1], Asub_array[1] + Bsub_array[1]);
 
     for (int i = 0; i< (NX*NY*NZ)/size; i++){
       Csub_array[i] = Asub_array[i] + Bsub_array[i];
 //	printf("Local sum running... Rank %d, value Asub_array[i] is %.6f, value of Bsub_array[i] is %.6f, the sum is %.6f \n", my_rank,Asub_array[i] , Bsub_array[i], Csub_array[i]);
 }
-      printf("About to gather on rank 0...");
+  //    printf("About to gather on rank 0...");
       MPI_Gather(Csub_array, (NX*NY*NZ)/size, MPI_DOUBLE, &C[my_rank*(NX*NY*NZ)/size], (NX*NY*NZ)/size, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 if (my_rank == 0){      
    printf("Values collected on process %d: %f, %f, %f, %f \n", my_rank, C[0], C[1], C[2],C[3]);
