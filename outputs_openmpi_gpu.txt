@@ -20,37 +20,29 @@ rm -rf build_IO build_IO/IMB_2018.o build_IO/IMB_utils.o build_IO/IMB_declare.o 
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=MPI1
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
-mkdir -p build_MPI1
 mpicc  -DMPI1 -DIMB2018 -c IMB_2018.c -o build_MPI1/IMB_2018.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_utils.c -o build_MPI1/IMB_utils.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_declare.c -o build_MPI1/IMB_declare.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_init.c -o build_MPI1/IMB_init.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_mem_manager.c -o build_MPI1/IMB_mem_manager.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_parse_name_mpi1.c -o build_MPI1/IMB_parse_name_mpi1.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_benchlist.c -o build_MPI1/IMB_benchlist.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_strgs.c -o build_MPI1/IMB_strgs.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_err_handler.c -o build_MPI1/IMB_err_handler.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_g_info.c -o build_MPI1/IMB_g_info.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_warm_up.c -o build_MPI1/IMB_warm_up.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_output.c -o build_MPI1/IMB_output.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_pingpong.c -o build_MPI1/IMB_pingpong.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_pingping.c -o build_MPI1/IMB_pingping.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allreduce.c -o build_MPI1/IMB_allreduce.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_reduce_scatter.c -o build_MPI1/IMB_reduce_scatter.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_reduce.c -o build_MPI1/IMB_reduce.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_exchange.c -o build_MPI1/IMB_exchange.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_bcast.c -o build_MPI1/IMB_bcast.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_barrier.c -o build_MPI1/IMB_barrier.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allgather.c -o build_MPI1/IMB_allgather.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allgatherv.c -o build_MPI1/IMB_allgatherv.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_gather.c -o build_MPI1/IMB_gather.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_gatherv.c -o build_MPI1/IMB_gatherv.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_scatter.c -o build_MPI1/IMB_scatter.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_scatterv.c -o build_MPI1/IMB_scatterv.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_alltoall.c -o build_MPI1/IMB_alltoall.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_alltoallv.c -o build_MPI1/IMB_alltoallv.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_sendrecv.c -o build_MPI1/IMB_sendrecv.o
-mpicc  -DMPI1 -DIMB2018 -c IMB_init_transfer.c -o build_MPI1/IMB_init_transfer.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_chk_diff.c -o build_MPI1/IMB_chk_diff.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_cpu_exploit.c -o build_MPI1/IMB_cpu_exploit.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_bandwidth.c -o build_MPI1/IMB_bandwidth.o
@@ -58,6 +50,13 @@ mpicc  build_MPI1/IMB_2018.o build_MPI1/IMB_utils.o build_MPI1/IMB_declare.o bui
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=NBC 
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
+mkdir -p build_NBC
+mpicc  -DNBC -DIMB2018 -c IMB_2018.c -o build_NBC/IMB_2018.o
+mpicc  -DNBC -DIMB2018 -c IMB_utils.c -o build_NBC/IMB_utils.o
+mpicc  -DNBC -DIMB2018 -c IMB_declare.c -o build_NBC/IMB_declare.o
+mpicc  -DNBC -DIMB2018 -c IMB_init.c -o build_NBC/IMB_init.o
+mpicc  -DNBC -DIMB2018 -c IMB_mem_manager.c -o build_NBC/IMB_mem_manager.o
+mpicc  -DNBC -DIMB2018 -c IMB_parse_name_nbc.c -o build_NBC/IMB_parse_name_nbc.o
 mpicc  -DNBC -DIMB2018 -c IMB_benchlist.c -o build_NBC/IMB_benchlist.o
 mpicc  -DNBC -DIMB2018 -c IMB_strgs.c -o build_NBC/IMB_strgs.o
 mpicc  -DNBC -DIMB2018 -c IMB_err_handler.c -o build_NBC/IMB_err_handler.o
@@ -66,18 +65,14 @@ mpicc  -DNBC -DIMB2018 -c IMB_warm_up.c -o build_NBC/IMB_warm_up.o
 mpicc  -DNBC -DIMB2018 -c IMB_output.c -o build_NBC/IMB_output.o
 mpicc  -DNBC -DIMB2018 -c IMB_allreduce.c -o build_NBC/IMB_allreduce.o
 mpicc  -DNBC -DIMB2018 -c IMB_reduce_scatter.c -o build_NBC/IMB_reduce_scatter.o
-mpicc  -DNBC -DIMB2018 -c IMB_reduce.c -o build_NBC/IMB_reduce.o
 mpicc  -DNBC -DIMB2018 -c IMB_bcast.c -o build_NBC/IMB_bcast.o
-mpicc  -DNBC -DIMB2018 -c IMB_barrier.c -o build_NBC/IMB_barrier.o
 mpicc  -DNBC -DIMB2018 -c IMB_allgather.c -o build_NBC/IMB_allgather.o
 mpicc  -DNBC -DIMB2018 -c IMB_allgatherv.c -o build_NBC/IMB_allgatherv.o
 mpicc  -DNBC -DIMB2018 -c IMB_gather.c -o build_NBC/IMB_gather.o
 mpicc  -DNBC -DIMB2018 -c IMB_gatherv.c -o build_NBC/IMB_gatherv.o
-mpicc  -DNBC -DIMB2018 -c IMB_scatter.c -o build_NBC/IMB_scatter.o
 mpicc  -DNBC -DIMB2018 -c IMB_scatterv.c -o build_NBC/IMB_scatterv.o
 mpicc  -DNBC -DIMB2018 -c IMB_alltoall.c -o build_NBC/IMB_alltoall.o
 mpicc  -DNBC -DIMB2018 -c IMB_alltoallv.c -o build_NBC/IMB_alltoallv.o
-mpicc  -DNBC -DIMB2018 -c IMB_sendrecv.c -o build_NBC/IMB_sendrecv.o
 mpicc  -DNBC -DIMB2018 -c IMB_init_transfer.c -o build_NBC/IMB_init_transfer.o
 mpicc  -DNBC -DIMB2018 -c IMB_chk_diff.c -o build_NBC/IMB_chk_diff.o
 mpicc  -DNBC -DIMB2018 -c IMB_cpu_exploit.c -o build_NBC/IMB_cpu_exploit.o
@@ -85,6 +80,12 @@ mpicc  build_NBC/IMB_2018.o build_NBC/IMB_utils.o build_NBC/IMB_declare.o build_
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=RMA 
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
+mkdir -p build_RMA
+mpicc  -DRMA -DIMB2018 -c IMB_2018.c -o build_RMA/IMB_2018.o
+mpicc  -DRMA -DIMB2018 -c IMB_utils.c -o build_RMA/IMB_utils.o
+mpicc  -DRMA -DIMB2018 -c IMB_declare.c -o build_RMA/IMB_declare.o
+mpicc  -DRMA -DIMB2018 -c IMB_init.c -o build_RMA/IMB_init.o
+mpicc  -DRMA -DIMB2018 -c IMB_mem_manager.c -o build_RMA/IMB_mem_manager.o
 mpicc  -DRMA -DIMB2018 -c IMB_benchlist.c -o build_RMA/IMB_benchlist.o
 mpicc  -DRMA -DIMB2018 -c IMB_parse_name_rma.c -o build_RMA/IMB_parse_name_rma.o
 mpicc  -DRMA -DIMB2018 -c IMB_strgs.c -o build_RMA/IMB_strgs.o
@@ -92,17 +93,22 @@ mpicc  -DRMA -DIMB2018 -c IMB_err_handler.c -o build_RMA/IMB_err_handler.o
 mpicc  -DRMA -DIMB2018 -c IMB_g_info.c -o build_RMA/IMB_g_info.o
 mpicc  -DRMA -DIMB2018 -c IMB_warm_up.c -o build_RMA/IMB_warm_up.o
 mpicc  -DRMA -DIMB2018 -c IMB_output.c -o build_RMA/IMB_output.o
-mpicc  -DRMA -DIMB2018 -c IMB_init_transfer.c -o build_RMA/IMB_init_transfer.o
 mpicc  -DRMA -DIMB2018 -c IMB_user_set_info.c -o build_RMA/IMB_user_set_info.o
 mpicc  -DRMA -DIMB2018 -c IMB_chk_diff.c -o build_RMA/IMB_chk_diff.o
 mpicc  -DRMA -DIMB2018 -c IMB_rma_put.c -o build_RMA/IMB_rma_put.o
 mpicc  -DRMA -DIMB2018 -c IMB_cpu_exploit.c -o build_RMA/IMB_cpu_exploit.o
-mpicc  -DRMA -DIMB2018 -c IMB_rma_get.c -o build_RMA/IMB_rma_get.o
 mpicc  -DRMA -DIMB2018 -c IMB_rma_atomic.c -o build_RMA/IMB_rma_atomic.o
 mpicc  build_RMA/IMB_2018.o build_RMA/IMB_utils.o build_RMA/IMB_declare.o build_RMA/IMB_init.o build_RMA/IMB_mem_manager.o build_RMA/IMB_benchlist.o build_RMA/IMB_parse_name_rma.o build_RMA/IMB_strgs.o build_RMA/IMB_err_handler.o build_RMA/IMB_g_info.o build_RMA/IMB_warm_up.o build_RMA/IMB_output.o build_RMA/IMB_init_transfer.o build_RMA/IMB_user_set_info.o build_RMA/IMB_chk_diff.o build_RMA/IMB_rma_put.o build_RMA/IMB_cpu_exploit.o build_RMA/IMB_rma_get.o build_RMA/IMB_rma_atomic.o -o IMB-RMA
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=EXT 
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
+mkdir -p build_EXT
+mpicc  -DEXT -DIMB2018 -c IMB_2018.c -o build_EXT/IMB_2018.o
+mpicc  -DEXT -DIMB2018 -c IMB_utils.c -o build_EXT/IMB_utils.o
+mpicc  -DEXT -DIMB2018 -c IMB_declare.c -o build_EXT/IMB_declare.o
+mpicc  -DEXT -DIMB2018 -c IMB_init.c -o build_EXT/IMB_init.o
+mpicc  -DEXT -DIMB2018 -c IMB_mem_manager.c -o build_EXT/IMB_mem_manager.o
+mpicc  -DEXT -DIMB2018 -c IMB_benchlist.c -o build_EXT/IMB_benchlist.o
 mpicc  -DEXT -DIMB2018 -c IMB_parse_name_ext.c -o build_EXT/IMB_parse_name_ext.o
 mpicc  -DEXT -DIMB2018 -c IMB_strgs.c -o build_EXT/IMB_strgs.o
 mpicc  -DEXT -DIMB2018 -c IMB_err_handler.c -o build_EXT/IMB_err_handler.o
@@ -111,7 +117,6 @@ mpicc  -DEXT -DIMB2018 -c IMB_warm_up.c -o build_EXT/IMB_warm_up.o
 mpicc  -DEXT -DIMB2018 -c IMB_output.c -o build_EXT/IMB_output.o
 mpicc  -DEXT -DIMB2018 -c IMB_window.c -o build_EXT/IMB_window.o
 mpicc  -DEXT -DIMB2018 -c IMB_ones_unidir.c -o build_EXT/IMB_ones_unidir.o
-mpicc  -DEXT -DIMB2018 -c IMB_ones_bidir.c -o build_EXT/IMB_ones_bidir.o
 mpicc  -DEXT -DIMB2018 -c IMB_ones_accu.c -o build_EXT/IMB_ones_accu.o
 mpicc  -DEXT -DIMB2018 -c IMB_init_transfer.c -o build_EXT/IMB_init_transfer.o
 mpicc  -DEXT -DIMB2018 -c IMB_user_set_info.c -o build_EXT/IMB_user_set_info.o
@@ -120,24 +125,15 @@ mpicc  build_EXT/IMB_2018.o build_EXT/IMB_utils.o build_EXT/IMB_declare.o build_
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=IO 
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
-mkdir -p build_IO
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_2018.c -o build_IO/IMB_2018.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_utils.c -o build_IO/IMB_utils.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_declare.c -o build_IO/IMB_declare.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init.c -o build_IO/IMB_init.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_mem_manager.c -o build_IO/IMB_mem_manager.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init_file.c -o build_IO/IMB_init_file.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_user_set_info.c -o build_IO/IMB_user_set_info.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_benchlist.c -o build_IO/IMB_benchlist.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_parse_name_io.c -o build_IO/IMB_parse_name_io.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_strgs.c -o build_IO/IMB_strgs.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_err_handler.c -o build_IO/IMB_err_handler.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_g_info.c -o build_IO/IMB_g_info.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_warm_up.c -o build_IO/IMB_warm_up.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_output.c -o build_IO/IMB_output.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_cpu_exploit.c -o build_IO/IMB_cpu_exploit.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_open_close.c -o build_IO/IMB_open_close.o
-mpicc -DMPIIO -DIO -DIMB2018 -c IMB_write.c -o build_IO/IMB_write.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_read.c -o build_IO/IMB_read.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init_transfer.c -o build_IO/IMB_init_transfer.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_chk_diff.c -o build_IO/IMB_chk_diff.o
@@ -177,30 +173,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.56         0.00
-            1         1000         0.63         1.59
-            2         1000         0.63         3.19
-            4         1000         0.63         6.33
-            8         1000         0.64        12.51
-           16         1000         0.63        25.25
-           32         1000         0.70        45.39
-           64         1000         0.91        70.43
-          128         1000         1.00       128.18
-          256         1000         1.19       215.53
-          512         1000         1.18       432.20
-         1024         1000         1.37       750.15
-         2048         1000         1.79      1147.12
-         4096         1000         2.94      1395.24
-         8192         1000         3.29      2491.01
-        16384         1000         3.86      4245.11
-        32768         1000         4.72      6949.21
-        65536          640         6.80      9638.83
-       131072          320        10.87     12060.38
-       262144          160        20.11     13036.39
-       524288           80        39.05     13427.16
-      1048576           40        91.03     11518.82
-      2097152           20       216.62      9681.34
-      4194304           10       403.46     10395.91
+            0         1000         0.54         0.00
+            1         1000         0.58         1.72
+            2         1000         0.57         3.50
+            4         1000         0.57         7.01
+            8         1000         0.57        13.94
+           16         1000         0.62        25.93
+           32         1000         0.69        46.68
+           64         1000         0.76        84.40
+          128         1000         0.83       155.09
+          256         1000         1.07       240.19
+          512         1000         1.25       410.73
+         1024         1000         1.38       739.97
+         2048         1000         1.78      1149.71
+         4096         1000         2.75      1488.09
+         8192         1000         3.08      2655.92
+        16384         1000         3.71      4419.61
+        32768         1000         4.92      6654.21
+        65536          640         6.35     10324.24
+       131072          320        10.63     12333.40
+       262144          160        21.40     12248.24
+       524288           80        44.54     11771.37
+      1048576           40       102.66     10213.99
+      2097152           20       221.95      9448.59
+      4194304           10       472.53      8876.36
 
 
 # All processes entering MPI_Finalize
@@ -240,30 +236,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.24         0.00
-            1         1000         0.27         3.65
-            2         1000         0.29         6.95
-            4         1000         0.30        13.55
-            8         1000         0.29        27.51
-           16         1000         0.29        54.53
-           32         1000         0.29       109.19
-           64         1000         0.34       189.74
-          128         1000         0.37       344.26
-          256         1000         0.46       561.47
-          512         1000         0.63       815.21
-         1024         1000         0.72      1420.84
-         2048         1000         0.84      2429.65
-         4096         1000         1.76      2320.73
-         8192         1000         2.17      3778.40
-        16384         1000         2.74      5982.87
-        32768         1000         3.92      8368.45
-        65536          640         5.05     12977.33
-       131072          320        10.56     12410.58
-       262144          160        18.70     14016.33
-       524288           80        38.52     13611.36
-      1048576           40        91.49     11460.85
-      2097152           20       215.46      9733.40
-      4194304           10       427.41      9813.26
+            0         1000         0.26         0.00
+            1         1000         0.31         3.27
+            2         1000         0.30         6.60
+            4         1000         0.30        13.16
+            8         1000         0.31        26.06
+           16         1000         0.31        50.87
+           32         1000         0.32        99.79
+           64         1000         0.35       184.48
+          128         1000         0.39       325.34
+          256         1000         0.47       539.44
+          512         1000         0.64       799.61
+         1024         1000         0.74      1378.68
+         2048         1000         0.87      2343.87
+         4096         1000         1.91      2143.32
+         8192         1000         2.11      3884.05
+        16384         1000         2.82      5806.14
+        32768         1000         3.70      8857.41
+        65536          640         6.21     10554.30
+       131072          320        10.41     12585.80
+       262144          160        18.66     14047.60
+       524288           80        46.04     11388.64
+      1048576           40       111.99      9362.75
+      2097152           20       255.78      8199.20
+      4194304           10       618.22      6784.50
 
 
 # All processes entering MPI_Finalize
@@ -303,30 +299,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         5.50         0.00
-            1         1000         5.58         0.18
-            2         1000         5.56         0.36
-            4         1000         5.52         0.72
-            8         1000         5.58         1.43
-           16         1000         5.55         2.88
-           32         1000         5.58         5.73
-           64         1000         5.59        11.46
-          128         1000         5.66        22.63
-          256         1000         5.66        45.27
-          512         1000         5.72        89.50
-         1024         1000         6.32       162.02
-         2048         1000         6.16       332.34
-         4096         1000         7.15       573.26
-         8192         1000         7.62      1075.39
-        16384         1000         9.88      1658.16
-        32768         1000        16.09      2037.01
-        65536          640        30.38      2156.89
-       131072          320        43.30      3027.19
-       262144          160        62.49      4194.70
-       524288           80        95.20      5507.11
-      1048576           40       161.37      6498.11
-      2097152           20       304.43      6888.80
-      4194304           10       608.82      6889.25
+            0         1000         4.94         0.00
+            1         1000         5.04         0.20
+            2         1000         5.03         0.40
+            4         1000         5.00         0.80
+            8         1000         5.07         1.58
+           16         1000         5.44         2.94
+           32         1000         5.34         5.99
+           64         1000         5.37        11.92
+          128         1000         5.42        23.61
+          256         1000         5.46        46.92
+          512         1000         5.19        98.63
+         1024         1000         5.78       177.25
+         2048         1000         5.58       366.96
+         4096         1000         6.42       638.02
+         8192         1000         6.97      1175.24
+        16384         1000         9.04      1812.46
+        32768         1000        14.70      2228.88
+        65536          640        31.79      2061.69
+       131072          320        46.81      2800.20
+       262144          160        64.78      4046.90
+       524288           80       100.33      5225.87
+      1048576           40       168.89      6208.54
+      2097152           20       328.33      6387.27
+      4194304           10       677.10      6194.53
 
 
 # All processes entering MPI_Finalize
@@ -366,30 +362,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         7.91         0.00
-            1         1000         7.93         0.13
-            2         1000         7.97         0.25
-            4         1000         7.99         0.50
-            8         1000         7.94         1.01
-           16         1000         7.98         2.01
-           32         1000         7.98         4.01
-           64         1000         7.92         8.08
-          128         1000         8.47        15.12
-          256         1000         8.49        30.14
-          512         1000         8.55        59.88
-         1024         1000         9.74       105.11
-         2048         1000         9.04       226.54
-         4096         1000        11.03       371.33
-         8192         1000        11.59       707.01
-        16384         1000        15.70      1043.79
-        32768         1000        25.66      1277.18
-        65536          640        56.92      1151.46
-       131072          320        81.65      1605.34
-       262144          160       122.68      2136.85
-       524288           80       195.55      2681.10
-      1048576           40       327.86      3198.25
-      2097152           20       623.92      3361.22
-      4194304           10      1238.46      3386.71
+            0         1000         8.54         0.00
+            1         1000         8.66         0.12
+            2         1000         8.69         0.23
+            4         1000         8.65         0.46
+            8         1000         8.65         0.93
+           16         1000         8.68         1.84
+           32         1000         8.70         3.68
+           64         1000         8.71         7.35
+          128         1000         8.94        14.32
+          256         1000         9.01        28.41
+          512         1000         9.05        56.57
+         1024         1000        10.18       100.59
+         2048         1000         9.58       213.83
+         4096         1000        11.50       356.15
+         8192         1000        12.25       668.58
+        16384         1000        16.70       981.08
+        32768         1000        26.83      1221.43
+        65536          640        62.76      1044.15
+       131072          320        89.01      1472.58
+       262144          160       134.34      1951.35
+       524288           80       207.64      2525.03
+      1048576           40       358.80      2922.43
+      2097152           20       676.97      3097.85
+      4194304           10      1347.07      3113.65
 
 
 # All processes entering MPI_Finalize
@@ -429,30 +425,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.26         0.00
-            1         1000         0.29         3.47
-            2         1000         0.29         6.87
-            4         1000         0.29        13.75
-            8         1000         0.29        27.47
-           16         1000         0.30        53.43
-           32         1000         0.31       102.23
-           64         1000         0.34       187.16
-          128         1000         0.38       335.59
-          256         1000         0.46       557.56
-          512         1000         0.63       809.19
-         1024         1000         0.72      1425.60
-         2048         1000         0.82      2496.07
-         4096         1000         1.78      2306.06
-         8192         1000         2.06      3979.11
-        16384         1000         2.74      5978.62
-        32768         1000         3.96      8267.21
-        65536          640         5.57     11776.38
-       131072          320         8.69     15085.94
-       262144          160        18.86     13901.53
-       524288           80        38.03     13785.85
-      1048576           40        87.79     11943.52
-      2097152           20       213.46      9824.34
-      4194304           10       428.90      9779.17
+            0         1000         0.27         0.00
+            1         1000         0.30         3.32
+            2         1000         0.30         6.60
+            4         1000         0.30        13.28
+            8         1000         0.30        26.60
+           16         1000         0.32        50.71
+           32         1000         0.32       101.25
+           64         1000         0.34       186.58
+          128         1000         0.40       321.93
+          256         1000         0.47       548.53
+          512         1000         0.63       818.61
+         1024         1000         0.72      1427.30
+         2048         1000         0.82      2504.83
+         4096         1000         1.87      2195.89
+         8192         1000         2.16      3797.11
+        16384         1000         2.76      5941.18
+        32768         1000         3.55      9235.70
+        65536          640         5.39     12147.64
+       131072          320         9.28     14122.29
+       262144          160        16.96     15452.77
+       524288           80        37.44     14002.87
+      1048576           40        99.23     10566.65
+      2097152           20       233.01      9000.45
+      4194304           10       554.52      7563.90
 
 
 # All processes entering MPI_Finalize
@@ -461,7 +457,7 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:37 2021
+# Date                  : Wed Dec 22 20:02:38 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -492,30 +488,30 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.25         0.00
-            1         1000         0.30         3.34
-            2         1000         0.30         6.64
-            4         1000         0.30        13.40
-            8         1000         0.30        26.60
-           16         1000         0.30        52.97
-           32         1000         0.30       107.05
-           64         1000         0.35       183.60
-          128         1000         0.39       326.98
-          256         1000         0.45       564.08
-          512         1000         0.63       816.44
-         1024         1000         0.71      1433.83
-         2048         1000         0.82      2509.06
-         4096         1000         1.76      2323.68
-         8192         1000         2.11      3881.27
-        16384         1000         2.65      6176.49
-        32768         1000         4.00      8192.80
-        65536          640         5.46     12007.13
-       131072          320        10.22     12822.73
-       262144          160        18.71     14007.55
-       524288           80        38.07     13770.49
-      1048576           40        88.32     11872.46
-      2097152           20       213.95      9801.95
-      4194304           10       422.29      9932.23
+            0         1000         0.27         0.00
+            1         1000         0.29         3.43
+            2         1000         0.29         6.96
+            4         1000         0.29        13.94
+            8         1000         0.29        27.69
+           16         1000         0.30        54.23
+           32         1000         0.29       109.75
+           64         1000         0.32       199.26
+          128         1000         0.38       333.07
+          256         1000         0.45       564.71
+          512         1000         0.60       855.22
+         1024         1000         0.69      1488.26
+         2048         1000         0.83      2479.25
+         4096         1000         1.65      2475.60
+         8192         1000         2.06      3985.57
+        16384         1000         2.48      6594.28
+        32768         1000         3.69      8883.48
+        65536          640         5.40     12140.35
+       131072          320         9.01     14539.56
+       262144          160        16.77     15633.88
+       524288           80        36.29     14445.51
+      1048576           40        98.33     10663.68
+      2097152           20       230.60      9094.16
+      4194304           10       553.76      7574.21
 
 
 # All processes entering MPI_Finalize
