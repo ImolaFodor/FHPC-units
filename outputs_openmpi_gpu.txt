@@ -20,29 +20,37 @@ rm -rf build_IO build_IO/IMB_2018.o build_IO/IMB_utils.o build_IO/IMB_declare.o 
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=MPI1
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
+mkdir -p build_MPI1
 mpicc  -DMPI1 -DIMB2018 -c IMB_2018.c -o build_MPI1/IMB_2018.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_utils.c -o build_MPI1/IMB_utils.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_declare.c -o build_MPI1/IMB_declare.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_init.c -o build_MPI1/IMB_init.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_mem_manager.c -o build_MPI1/IMB_mem_manager.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_parse_name_mpi1.c -o build_MPI1/IMB_parse_name_mpi1.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_benchlist.c -o build_MPI1/IMB_benchlist.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_strgs.c -o build_MPI1/IMB_strgs.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_err_handler.c -o build_MPI1/IMB_err_handler.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_g_info.c -o build_MPI1/IMB_g_info.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_warm_up.c -o build_MPI1/IMB_warm_up.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_output.c -o build_MPI1/IMB_output.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_pingpong.c -o build_MPI1/IMB_pingpong.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_pingping.c -o build_MPI1/IMB_pingping.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allreduce.c -o build_MPI1/IMB_allreduce.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_reduce_scatter.c -o build_MPI1/IMB_reduce_scatter.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_reduce.c -o build_MPI1/IMB_reduce.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_exchange.c -o build_MPI1/IMB_exchange.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_bcast.c -o build_MPI1/IMB_bcast.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_barrier.c -o build_MPI1/IMB_barrier.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allgather.c -o build_MPI1/IMB_allgather.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_allgatherv.c -o build_MPI1/IMB_allgatherv.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_gather.c -o build_MPI1/IMB_gather.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_gatherv.c -o build_MPI1/IMB_gatherv.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_scatter.c -o build_MPI1/IMB_scatter.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_scatterv.c -o build_MPI1/IMB_scatterv.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_alltoall.c -o build_MPI1/IMB_alltoall.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_alltoallv.c -o build_MPI1/IMB_alltoallv.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_sendrecv.c -o build_MPI1/IMB_sendrecv.o
+mpicc  -DMPI1 -DIMB2018 -c IMB_init_transfer.c -o build_MPI1/IMB_init_transfer.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_chk_diff.c -o build_MPI1/IMB_chk_diff.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_cpu_exploit.c -o build_MPI1/IMB_cpu_exploit.o
 mpicc  -DMPI1 -DIMB2018 -c IMB_bandwidth.c -o build_MPI1/IMB_bandwidth.o
@@ -65,14 +73,18 @@ mpicc  -DNBC -DIMB2018 -c IMB_warm_up.c -o build_NBC/IMB_warm_up.o
 mpicc  -DNBC -DIMB2018 -c IMB_output.c -o build_NBC/IMB_output.o
 mpicc  -DNBC -DIMB2018 -c IMB_allreduce.c -o build_NBC/IMB_allreduce.o
 mpicc  -DNBC -DIMB2018 -c IMB_reduce_scatter.c -o build_NBC/IMB_reduce_scatter.o
+mpicc  -DNBC -DIMB2018 -c IMB_reduce.c -o build_NBC/IMB_reduce.o
 mpicc  -DNBC -DIMB2018 -c IMB_bcast.c -o build_NBC/IMB_bcast.o
+mpicc  -DNBC -DIMB2018 -c IMB_barrier.c -o build_NBC/IMB_barrier.o
 mpicc  -DNBC -DIMB2018 -c IMB_allgather.c -o build_NBC/IMB_allgather.o
 mpicc  -DNBC -DIMB2018 -c IMB_allgatherv.c -o build_NBC/IMB_allgatherv.o
 mpicc  -DNBC -DIMB2018 -c IMB_gather.c -o build_NBC/IMB_gather.o
 mpicc  -DNBC -DIMB2018 -c IMB_gatherv.c -o build_NBC/IMB_gatherv.o
+mpicc  -DNBC -DIMB2018 -c IMB_scatter.c -o build_NBC/IMB_scatter.o
 mpicc  -DNBC -DIMB2018 -c IMB_scatterv.c -o build_NBC/IMB_scatterv.o
 mpicc  -DNBC -DIMB2018 -c IMB_alltoall.c -o build_NBC/IMB_alltoall.o
 mpicc  -DNBC -DIMB2018 -c IMB_alltoallv.c -o build_NBC/IMB_alltoallv.o
+mpicc  -DNBC -DIMB2018 -c IMB_sendrecv.c -o build_NBC/IMB_sendrecv.o
 mpicc  -DNBC -DIMB2018 -c IMB_init_transfer.c -o build_NBC/IMB_init_transfer.o
 mpicc  -DNBC -DIMB2018 -c IMB_chk_diff.c -o build_NBC/IMB_chk_diff.o
 mpicc  -DNBC -DIMB2018 -c IMB_cpu_exploit.c -o build_NBC/IMB_cpu_exploit.o
@@ -93,10 +105,12 @@ mpicc  -DRMA -DIMB2018 -c IMB_err_handler.c -o build_RMA/IMB_err_handler.o
 mpicc  -DRMA -DIMB2018 -c IMB_g_info.c -o build_RMA/IMB_g_info.o
 mpicc  -DRMA -DIMB2018 -c IMB_warm_up.c -o build_RMA/IMB_warm_up.o
 mpicc  -DRMA -DIMB2018 -c IMB_output.c -o build_RMA/IMB_output.o
+mpicc  -DRMA -DIMB2018 -c IMB_init_transfer.c -o build_RMA/IMB_init_transfer.o
 mpicc  -DRMA -DIMB2018 -c IMB_user_set_info.c -o build_RMA/IMB_user_set_info.o
 mpicc  -DRMA -DIMB2018 -c IMB_chk_diff.c -o build_RMA/IMB_chk_diff.o
 mpicc  -DRMA -DIMB2018 -c IMB_rma_put.c -o build_RMA/IMB_rma_put.o
 mpicc  -DRMA -DIMB2018 -c IMB_cpu_exploit.c -o build_RMA/IMB_cpu_exploit.o
+mpicc  -DRMA -DIMB2018 -c IMB_rma_get.c -o build_RMA/IMB_rma_get.o
 mpicc  -DRMA -DIMB2018 -c IMB_rma_atomic.c -o build_RMA/IMB_rma_atomic.o
 mpicc  build_RMA/IMB_2018.o build_RMA/IMB_utils.o build_RMA/IMB_declare.o build_RMA/IMB_init.o build_RMA/IMB_mem_manager.o build_RMA/IMB_benchlist.o build_RMA/IMB_parse_name_rma.o build_RMA/IMB_strgs.o build_RMA/IMB_err_handler.o build_RMA/IMB_g_info.o build_RMA/IMB_warm_up.o build_RMA/IMB_output.o build_RMA/IMB_init_transfer.o build_RMA/IMB_user_set_info.o build_RMA/IMB_chk_diff.o build_RMA/IMB_rma_put.o build_RMA/IMB_cpu_exploit.o build_RMA/IMB_rma_get.o build_RMA/IMB_rma_atomic.o -o IMB-RMA
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
@@ -117,6 +131,7 @@ mpicc  -DEXT -DIMB2018 -c IMB_warm_up.c -o build_EXT/IMB_warm_up.o
 mpicc  -DEXT -DIMB2018 -c IMB_output.c -o build_EXT/IMB_output.o
 mpicc  -DEXT -DIMB2018 -c IMB_window.c -o build_EXT/IMB_window.o
 mpicc  -DEXT -DIMB2018 -c IMB_ones_unidir.c -o build_EXT/IMB_ones_unidir.o
+mpicc  -DEXT -DIMB2018 -c IMB_ones_bidir.c -o build_EXT/IMB_ones_bidir.o
 mpicc  -DEXT -DIMB2018 -c IMB_ones_accu.c -o build_EXT/IMB_ones_accu.o
 mpicc  -DEXT -DIMB2018 -c IMB_init_transfer.c -o build_EXT/IMB_init_transfer.o
 mpicc  -DEXT -DIMB2018 -c IMB_user_set_info.c -o build_EXT/IMB_user_set_info.o
@@ -125,15 +140,24 @@ mpicc  build_EXT/IMB_2018.o build_EXT/IMB_utils.o build_EXT/IMB_declare.o build_
 make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
 make -f Makefile TARGET=IO 
 make[1]: Entering directory `/large/___HOME___/dssc/ifodor/2021Assignment01/section2'
+mkdir -p build_IO
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_2018.c -o build_IO/IMB_2018.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_utils.c -o build_IO/IMB_utils.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_declare.c -o build_IO/IMB_declare.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init.c -o build_IO/IMB_init.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_mem_manager.c -o build_IO/IMB_mem_manager.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init_file.c -o build_IO/IMB_init_file.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_user_set_info.c -o build_IO/IMB_user_set_info.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_benchlist.c -o build_IO/IMB_benchlist.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_parse_name_io.c -o build_IO/IMB_parse_name_io.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_strgs.c -o build_IO/IMB_strgs.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_err_handler.c -o build_IO/IMB_err_handler.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_g_info.c -o build_IO/IMB_g_info.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_warm_up.c -o build_IO/IMB_warm_up.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_output.c -o build_IO/IMB_output.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_cpu_exploit.c -o build_IO/IMB_cpu_exploit.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_open_close.c -o build_IO/IMB_open_close.o
+mpicc -DMPIIO -DIO -DIMB2018 -c IMB_write.c -o build_IO/IMB_write.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_read.c -o build_IO/IMB_read.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_init_transfer.c -o build_IO/IMB_init_transfer.o
 mpicc -DMPIIO -DIO -DIMB2018 -c IMB_chk_diff.c -o build_IO/IMB_chk_diff.o
@@ -142,70 +166,7 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:34 2021
-# Machine               : x86_64
-# System                : Linux
-# Release               : 5.7.9-1.el7.elrepo.x86_64
-# Version               : #1 SMP Wed Jul 15 10:37:17 EDT 2020
-# MPI Version           : 3.1
-# MPI Thread Environment: 
-
-
-# Calling sequence was: 
-
-# ./IMB-MPI1 PingPong
-
-# Minimum message length in bytes:   0
-# Maximum message length in bytes:   4194304
-#
-# MPI_Datatype                   :   MPI_BYTE 
-# MPI_Datatype for reductions    :   MPI_FLOAT
-# MPI_Op                         :   MPI_SUM  
-#
-#
-
-# List of Benchmarks to run:
-
-# PingPong
-
-#---------------------------------------------------
-# Benchmarking PingPong 
-# #processes = 2 
-#---------------------------------------------------
-       #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.54         0.00
-            1         1000         0.58         1.72
-            2         1000         0.57         3.50
-            4         1000         0.57         7.01
-            8         1000         0.57        13.94
-           16         1000         0.62        25.93
-           32         1000         0.69        46.68
-           64         1000         0.76        84.40
-          128         1000         0.83       155.09
-          256         1000         1.07       240.19
-          512         1000         1.25       410.73
-         1024         1000         1.38       739.97
-         2048         1000         1.78      1149.71
-         4096         1000         2.75      1488.09
-         8192         1000         3.08      2655.92
-        16384         1000         3.71      4419.61
-        32768         1000         4.92      6654.21
-        65536          640         6.35     10324.24
-       131072          320        10.63     12333.40
-       262144          160        21.40     12248.24
-       524288           80        44.54     11771.37
-      1048576           40       102.66     10213.99
-      2097152           20       221.95      9448.59
-      4194304           10       472.53      8876.36
-
-
-# All processes entering MPI_Finalize
-
-2nd Done!
-#------------------------------------------------------------
-#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
-#------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:34 2021
+# Date                  : Fri Dec 24 16:11:04 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -237,38 +198,38 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
             0         1000         0.26         0.00
-            1         1000         0.31         3.27
-            2         1000         0.30         6.60
-            4         1000         0.30        13.16
-            8         1000         0.31        26.06
-           16         1000         0.31        50.87
-           32         1000         0.32        99.79
-           64         1000         0.35       184.48
-          128         1000         0.39       325.34
-          256         1000         0.47       539.44
-          512         1000         0.64       799.61
-         1024         1000         0.74      1378.68
-         2048         1000         0.87      2343.87
-         4096         1000         1.91      2143.32
-         8192         1000         2.11      3884.05
-        16384         1000         2.82      5806.14
-        32768         1000         3.70      8857.41
-        65536          640         6.21     10554.30
-       131072          320        10.41     12585.80
-       262144          160        18.66     14047.60
-       524288           80        46.04     11388.64
-      1048576           40       111.99      9362.75
-      2097152           20       255.78      8199.20
-      4194304           10       618.22      6784.50
+            1         1000         0.29         3.49
+            2         1000         0.29         6.93
+            4         1000         0.28        14.05
+            8         1000         0.29        27.96
+           16         1000         0.29        54.67
+           32         1000         0.29       109.17
+           64         1000         0.32       197.47
+          128         1000         0.37       343.32
+          256         1000         0.45       571.37
+          512         1000         0.57       895.81
+         1024         1000         0.66      1542.13
+         2048         1000         0.80      2546.23
+         4096         1000         1.68      2445.29
+         8192         1000         1.99      4122.07
+        16384         1000         2.59      6328.23
+        32768         1000         3.59      9133.41
+        65536          640         5.65     11603.09
+       131072          320         9.50     13792.12
+       262144          160        16.94     15472.94
+       524288           80        36.34     14425.47
+      1048576           40        98.65     10629.66
+      2097152           20       239.20      8767.49
+      4194304           10       711.79      5892.61
 
 
 # All processes entering MPI_Finalize
 
-3rd Done!
+Map by node on ip done!
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:35 2021
+# Date                  : Fri Dec 24 16:11:04 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -299,39 +260,39 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         4.94         0.00
-            1         1000         5.04         0.20
-            2         1000         5.03         0.40
-            4         1000         5.00         0.80
-            8         1000         5.07         1.58
-           16         1000         5.44         2.94
-           32         1000         5.34         5.99
-           64         1000         5.37        11.92
-          128         1000         5.42        23.61
-          256         1000         5.46        46.92
-          512         1000         5.19        98.63
-         1024         1000         5.78       177.25
-         2048         1000         5.58       366.96
-         4096         1000         6.42       638.02
-         8192         1000         6.97      1175.24
-        16384         1000         9.04      1812.46
-        32768         1000        14.70      2228.88
-        65536          640        31.79      2061.69
-       131072          320        46.81      2800.20
-       262144          160        64.78      4046.90
-       524288           80       100.33      5225.87
-      1048576           40       168.89      6208.54
-      2097152           20       328.33      6387.27
-      4194304           10       677.10      6194.53
+            0         1000         0.55         0.00
+            1         1000         0.58         1.74
+            2         1000         0.57         3.49
+            4         1000         0.57         6.98
+            8         1000         0.58        13.84
+           16         1000         0.62        25.99
+           32         1000         0.71        45.35
+           64         1000         0.77        83.42
+          128         1000         0.93       138.22
+          256         1000         1.06       241.74
+          512         1000         1.26       406.87
+         1024         1000         1.43       714.40
+         2048         1000         1.81      1130.26
+         4096         1000         2.50      1636.39
+         8192         1000         3.02      2714.52
+        16384         1000         3.52      4660.87
+        32768         1000         4.80      6831.68
+        65536          640         6.46     10145.48
+       131072          320        10.23     12812.92
+       262144          160        17.93     14619.78
+       524288           80        38.23     13715.16
+      1048576           40       100.37     10447.16
+      2097152           20       236.14      8881.03
+      4194304           10       475.98      8811.90
 
 
 # All processes entering MPI_Finalize
 
-4a-th Done!
+echo Map by socket on ip done!
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:36 2021
+# Date                  : Fri Dec 24 16:11:04 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -362,39 +323,39 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         8.54         0.00
-            1         1000         8.66         0.12
-            2         1000         8.69         0.23
-            4         1000         8.65         0.46
-            8         1000         8.65         0.93
-           16         1000         8.68         1.84
-           32         1000         8.70         3.68
-           64         1000         8.71         7.35
-          128         1000         8.94        14.32
-          256         1000         9.01        28.41
-          512         1000         9.05        56.57
-         1024         1000        10.18       100.59
-         2048         1000         9.58       213.83
-         4096         1000        11.50       356.15
-         8192         1000        12.25       668.58
-        16384         1000        16.70       981.08
-        32768         1000        26.83      1221.43
-        65536          640        62.76      1044.15
-       131072          320        89.01      1472.58
-       262144          160       134.34      1951.35
-       524288           80       207.64      2525.03
-      1048576           40       358.80      2922.43
-      2097152           20       676.97      3097.85
-      4194304           10      1347.07      3113.65
+            0         1000         0.26         0.00
+            1         1000         0.28         3.55
+            2         1000         0.30         6.73
+            4         1000         0.28        14.11
+            8         1000         0.28        28.67
+           16         1000         0.29        55.51
+           32         1000         0.29       109.79
+           64         1000         0.32       200.12
+          128         1000         0.37       345.35
+          256         1000         0.38       666.66
+          512         1000         0.59       871.56
+         1024         1000         0.65      1572.26
+         2048         1000         0.81      2517.48
+         4096         1000         1.71      2395.88
+         8192         1000         2.03      4044.44
+        16384         1000         2.55      6431.67
+        32768         1000         3.56      9207.29
+        65536          640         5.47     11986.65
+       131072          320         9.30     14087.80
+       262144          160        16.78     15617.77
+       524288           80        37.23     14081.38
+      1048576           40        99.59     10528.47
+      2097152           20       233.02      8999.94
+      4194304           10       552.30      7594.23
 
 
 # All processes entering MPI_Finalize
 
-4b-th Done!
+echo Map by core on ip done!
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:37 2021
+# Date                  : Fri Dec 24 16:11:05 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -425,39 +386,39 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.27         0.00
-            1         1000         0.30         3.32
-            2         1000         0.30         6.60
-            4         1000         0.30        13.28
-            8         1000         0.30        26.60
-           16         1000         0.32        50.71
-           32         1000         0.32       101.25
-           64         1000         0.34       186.58
-          128         1000         0.40       321.93
-          256         1000         0.47       548.53
-          512         1000         0.63       818.61
-         1024         1000         0.72      1427.30
-         2048         1000         0.82      2504.83
-         4096         1000         1.87      2195.89
-         8192         1000         2.16      3797.11
-        16384         1000         2.76      5941.18
-        32768         1000         3.55      9235.70
-        65536          640         5.39     12147.64
-       131072          320         9.28     14122.29
-       262144          160        16.96     15452.77
-       524288           80        37.44     14002.87
-      1048576           40        99.23     10566.65
-      2097152           20       233.01      9000.45
-      4194304           10       554.52      7563.90
+            0         1000         4.93         0.00
+            1         1000         5.01         0.20
+            2         1000         5.00         0.40
+            4         1000         5.02         0.80
+            8         1000         5.01         1.60
+           16         1000         5.00         3.20
+           32         1000         5.00         6.40
+           64         1000         5.02        12.76
+          128         1000         5.08        25.20
+          256         1000         5.13        49.86
+          512         1000         5.18        98.87
+         1024         1000         5.79       176.87
+         2048         1000         5.72       358.03
+         4096         1000         6.46       634.49
+         8192         1000         6.95      1178.74
+        16384         1000         9.01      1819.42
+        32768         1000        14.52      2256.97
+        65536          640        30.11      2176.38
+       131072          320        44.32      2957.47
+       262144          160        61.76      4244.68
+       524288           80        97.96      5352.29
+      1048576           40       164.19      6386.23
+      2097152           20       320.33      6546.86
+      4194304           10       655.30      6400.63
 
 
 # All processes entering MPI_Finalize
 
-5th Done!
+Map by node on tcp done!
 #------------------------------------------------------------
 #    Intel(R) MPI Benchmarks 2018, MPI-1 part    
 #------------------------------------------------------------
-# Date                  : Wed Dec 22 20:02:38 2021
+# Date                  : Fri Dec 24 16:11:06 2021
 # Machine               : x86_64
 # System                : Linux
 # Release               : 5.7.9-1.el7.elrepo.x86_64
@@ -488,32 +449,94 @@ make[1]: Leaving directory `/large/___HOME___/dssc/ifodor/2021Assignment01/secti
 # #processes = 2 
 #---------------------------------------------------
        #bytes #repetitions      t[usec]   Mbytes/sec
-            0         1000         0.27         0.00
-            1         1000         0.29         3.43
-            2         1000         0.29         6.96
-            4         1000         0.29        13.94
-            8         1000         0.29        27.69
-           16         1000         0.30        54.23
-           32         1000         0.29       109.75
-           64         1000         0.32       199.26
-          128         1000         0.38       333.07
-          256         1000         0.45       564.71
-          512         1000         0.60       855.22
-         1024         1000         0.69      1488.26
-         2048         1000         0.83      2479.25
-         4096         1000         1.65      2475.60
-         8192         1000         2.06      3985.57
-        16384         1000         2.48      6594.28
-        32768         1000         3.69      8883.48
-        65536          640         5.40     12140.35
-       131072          320         9.01     14539.56
-       262144          160        16.77     15633.88
-       524288           80        36.29     14445.51
-      1048576           40        98.33     10663.68
-      2097152           20       230.60      9094.16
-      4194304           10       553.76      7574.21
+            0         1000         8.47         0.00
+            1         1000         8.50         0.12
+            2         1000         8.48         0.24
+            4         1000         8.49         0.47
+            8         1000         8.63         0.93
+           16         1000         8.46         1.89
+           32         1000         8.54         3.75
+           64         1000         8.47         7.56
+          128         1000         8.83        14.49
+          256         1000         8.86        28.90
+          512         1000         8.96        57.16
+         1024         1000        10.08       101.63
+         2048         1000         9.41       217.72
+         4096         1000        11.35       360.75
+         8192         1000        12.08       678.20
+        16384         1000        16.62       985.70
+        32768         1000        27.03      1212.37
+        65536          640        62.85      1042.82
+       131072          320        88.56      1480.08
+       262144          160       133.76      1959.78
+       524288           80       206.78      2535.51
+      1048576           40       359.41      2917.46
+      2097152           20       678.74      3089.78
+      4194304           10      1351.51      3103.41
 
 
 # All processes entering MPI_Finalize
 
-6th Done!
+Map by socket on tcp done!
+#------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part    
+#------------------------------------------------------------
+# Date                  : Fri Dec 24 16:11:07 2021
+# Machine               : x86_64
+# System                : Linux
+# Release               : 5.7.9-1.el7.elrepo.x86_64
+# Version               : #1 SMP Wed Jul 15 10:37:17 EDT 2020
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# ./IMB-MPI1 PingPong
+
+# Minimum message length in bytes:   0
+# Maximum message length in bytes:   4194304
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# PingPong
+
+#---------------------------------------------------
+# Benchmarking PingPong 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions      t[usec]   Mbytes/sec
+            0         1000         0.26         0.00
+            1         1000         0.29         3.49
+            2         1000         0.29         6.86
+            4         1000         0.29        13.79
+            8         1000         0.29        27.64
+           16         1000         0.29        54.26
+           32         1000         0.30       106.94
+           64         1000         0.32       197.52
+          128         1000         0.37       341.63
+          256         1000         0.45       569.72
+          512         1000         0.57       897.67
+         1024         1000         0.66      1559.84
+         2048         1000         0.81      2529.64
+         4096         1000         1.67      2452.15
+         8192         1000         2.05      3988.32
+        16384         1000         2.49      6581.80
+        32768         1000         3.62      9062.31
+        65536          640         5.35     12254.81
+       131072          320         9.19     14260.79
+       262144          160        16.79     15611.30
+       524288           80        36.42     14394.60
+      1048576           40        96.12     10908.73
+      2097152           20       224.91      9324.23
+      4194304           10       530.53      7905.93
+
+
+# All processes entering MPI_Finalize
+

@@ -1,0 +1,4 @@
+THe above run is on openmpi on tcp by node
+THe above run is on thin, intel, tcp by node
+The above run is on gpu, intel, tcp by node
+The above run is on gpu, openmpi, tcp by node
